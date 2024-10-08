@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Treino - Informações</title>
+    <link rel="shortcut icon" href="favicon_io (6)/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+                            body {
+        font-family: Arial, sans-serif;
+        background-color:#03B403;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .container {
+        
+        margin: 30px;
+        background: #03B403;
+        padding: 20px;
+        border-radius: 20px;
+        width: 320px;
+        height: 450px;
+        background-color: black;
+        
+ 
+       
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: white;
+    
+    }
+
+    input {
+        width: calc(100% - 24px);
+        padding: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        height: 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        
+    }
+
+    input:hover {
+        color: white;
+        background-color: rgb(10, 228, 10);
+        transform: scale(1.1);
+        
+    }
+    
+
+
+
+
+    button {
+        padding: 10px 15px;
+        background-color: #01e425;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 330px;
+        height: 40px;
+        
+
+    }
+
+    button:hover {
+        background-color: #01c221;
+ 
+    }
+
+    .muscle-container {
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+    .muscle-container button {
+        padding: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .muscle-container button:hover {
+        background-color: #0056b3;
+    }
+
+    .exercise-container {
+        background-color: black;
+        border-radius: 20px;
+        
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: white;
+        width: 300px;
+        height: 70px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        text-align: center;
+        margin-left: -17px;
+    }
+
+    .exercise-container img {
+        width: 180px;
+        height: 125px;
+        border-radius: 10px;
+        margin-right: 20px;
+    }
+
+    .exercise-container p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .back-button {
+        padding: 10px 15px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .back-button:hover {
+        background-color: #c82333;
+        
+    }
+
+    .form-box {
+        background-image: url('treino de braço.png');
+    }
+
+    .container1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+
+
+    .form-box,
+    .form-box2,
+    .form-box3,
+    .form-box4,
+    .form-box5,
+    .form-box6,
+    .form-box7 {
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        
+        height: 90px;
+        width: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        margin: 15px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+        cursor: pointer;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+        margin-left: -18px;
+    }
+
+
+
+    .form-box2 {
+        background-image: url('treino de costa.png');
+    }
+
+    .form-box3 {
+        background-image: url('treino de abdomen.png');
+    }
+
+    .form-box4 {
+        background-image: url('treino de perna.png');
+    }
+
+    .form-box5 {
+        background-image: url('treio de peito.png');
+    }
+
+    .form-box6 {
+        background-image: url('treino de ombros.png');
+    }
+
+    .form-box7 {
+        background-image: url("treino de gluteo.jpg");
+    }
+
+
+    .form-box:hover,
+    .form-box2:hover,
+    .form-box3:hover,
+    .form-box4:hover,
+    .form-box5:hover,
+    .form-box6:hover,
+    .form-box7:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 40px rgba(8, 218, 200, 0.5);
+    }
+
+    .container1:hover > .form-box:not(:hover),
+    .container1:hover > .form-box2:not(:hover),
+    .container1:hover > .form-box3:not(:hover),
+    .container1:hover > .form-box4:not(:hover),
+    .container1:hover > .form-box5:not(:hover),
+    .container1:hover > .form-box6:not(:hover),
+    .container1:hover > .form-box7:not(:hover) {
+        filter: blur(10px);
+        transform: scale(0.9);
+    }
+
+
+
+
+
+    .treinos {
+        font-size: 45px;
+        margin: 10px;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .treinos a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .treinos a:hover {
+        text-decoration: none;
+    }
+
+    .menu-icon {
+        font-size: 30px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 250px;
+        height: 100%;
+        background-color: #03B403;
+        color: white;
+        padding: 20px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 10px 40px black;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .sidebar ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .navbar a i {
+        margin-bottom: 3px;
+        font-size: 20px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: rgb(8, 218, 8);
+    }
+
+    @media (min-width: 600px) {
+        .navbar a {
+            font-size: 20px;
+        }
+
+        .navbar a i {
+            font-size: 24px;
+        }
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 50px;
+        color: white;
+    }
+    a{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    ul{
+        text-decoration: none;
+    }
+
+
+
+
+    .modal {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 600px;
+        background-color: rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        z-index: 1;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(100%);
+        overflow-x: hidden;
+    }
+
+    .modal-content {
+        background-color: rgb(0, 0, 0);
+        
+        border: 1px solid #888;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -10px 40px black;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease-in-out;
+        overflow-x: hidden;
+    }
+
+    .close {
+        color: rgb(41, 240, 1);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: white;
+        text-decoration: none;
+    }
+
+    .container2{
+    background-color: transparent;
+    }
+
+    .peso{
+        color:white;
+    }
+
+    .altura{
+        color: white;
+    }
+
+    .container-black{
+       
+        background-color: black;
+        width: 320px;
+        height: 250px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+    </style>
+    <div class="container" id="input-page">
+        <h1>Informações</h1>
+
+        <label for="doenca">Doença alimentar:</label>
+        <input type="text" id="doenca" placeholder="doença">
+
+        <label for="vegano">Vegano(a):</label>
+        <input type="text" id="vegano" placeholder="vegano">
+
+        <label for="restricao">Restrição alimentar:</label>
+        <input type="text" id="restricao" placeholder="restrição">
+
+        <label for="preferencia">Preferência de comida:</label>
+        <input type="text" id="preferencia" placeholder="preferência">
+    </div>
+
+    <div class="container-black" id="input-page">
+        <label for="altura">Altura (em metros):</label>
+        <input type="range" id="altura" min="1.20" max="2.20" step="0.01" value="1.75" oninput="updateRangeValue('altura')">
+        <div id="altura-value" class="altura">Altura: 1.75m</div>
+
+        <label for="peso">Peso (em kg):</label>
+        <input type="range" id="peso" min="30" max="150" step="1" value="70" oninput="updateRangeValue('peso')">
+        <div id="peso-value" class="peso">Peso: 70kg</div>
+
+        <!-- <label for="objetivo">Objetivo:</label>
+        <input type="text" id="objetivo" placeholder="Ex: peso, estética, saúde"> -->
+
+        <button onclick="onGenerateClick()">Gerar Plano</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function updateRangeValue(id) {
+            const value = document.getElementById(id).value;
+            document.getElementById(`${id}-value`).innerText = `${id.charAt(0).toUpperCase() + id.slice(1)}: ${value}${id === 'altura' ? 'm' : 'kg'}`;
+        }
+
+
+
+
+        //BANCO DE DADOS NORMAL
+        const data = [
+            //Segunda
+        { alimento: 'Pão', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'pão.png' },
+{ alimento: 'Feijão', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'rosca_direta.gif' },
+{ alimento: 'Salada', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'rosca_direta.gif' },
+{ alimento: 'Hamburguer', dia: 'segunda', doenca: "diabetes", restricao: 'glúten', vegano: 'não', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'rosca_direta.gif' },
+{ alimento: 'Arroz integral', dia: 'segunda', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.80, preferencia: 'baixa gordura', gif: 'arroz.png' },
+{ alimento: 'Abacate', dia: 'segunda', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.70, preferencia: 'nenhuma', gif: 'abacate.png' },
+{ alimento: 'Quinoa', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 65, altura: 1.60, preferencia: 'orgânico', gif: 'quinoa.png' },
+{ alimento: 'Lentilha', dia: 'segunda', doenca: "intolerância à lactose", restricao: 'lactose', vegano: 'sim', peso: 58, altura: 1.68, preferencia: 'nenhuma', gif: 'lentilha.png' },
+{ alimento: 'Couve', dia: 'segunda', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 75, altura: 1.85, preferencia: 'nenhuma', gif: 'couve.png' },
+{ alimento: 'Batata doce', dia: 'segunda', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 95, altura: 1.78, preferencia: 'nenhuma', gif: 'batata_doce.png' },
+{ alimento: 'Grão de bico', dia: 'segunda', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 62, altura: 1.65, preferencia: 'nenhuma', gif: 'grao_de_bico.png' },
+{ alimento: 'Tofu', dia: 'segunda', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 67, altura: 1.70, preferencia: 'nenhuma', gif: 'tofu.png' },
+{ alimento: 'Mandioca', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 74, altura: 1.72, preferencia: 'nenhuma', gif: 'mandioca.png' },
+{ alimento: 'Cenoura', dia: 'segunda', doenca: "intolerância ao glúten", restricao: 'glúten', vegano: 'sim', peso: 68, altura: 1.82, preferencia: 'nenhuma', gif: 'cenoura.png' },
+{ alimento: 'Tomate', dia: 'segunda', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 55, altura: 1.60, preferencia: 'nenhuma', gif: 'tomate.png' },
+{ alimento: 'Pepino', dia: 'segunda', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.90, preferencia: 'nenhuma', gif: 'pepino.png' },
+{ alimento: 'Beringela', dia: 'segunda', doenca: "colesterol alto", restricao: 'gordura', vegano: 'sim', peso: 85, altura: 1.75, preferencia: 'nenhuma', gif: 'beringela.png' },
+{ alimento: 'Frango grelhado', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'não', peso: 78, altura: 1.77, preferencia: 'proteínas', gif: 'frango.png' },
+{ alimento: 'Peixe', dia: 'segunda', doenca: "hipertensão", restricao: 'sal', vegano: 'não', peso: 68, altura: 1.65, preferencia: 'omega-3', gif: 'peixe.png' },
+{ alimento: 'Maçã', dia: 'segunda', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 60, altura: 1.70, preferencia: 'frutas frescas', gif: 'maca.png' },
+
+
+//terça 
+{ alimento: 'Aveia', dia: 'terça', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.70, preferencia: 'fibras', gif: 'aveia.png' },
+{ alimento: 'Cenoura', dia: 'terça', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'nenhuma', gif: 'cenoura.png' },
+{ alimento: 'Espinafre', dia: 'terça', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 67, altura: 1.60, preferencia: 'nenhuma', gif: 'espinafre.png' },
+{ alimento: 'Frango', dia: 'terça', doenca: "hipertensão", restricao: 'sal', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'proteínas', gif: 'frango.png' },
+{ alimento: 'Batata', dia: 'terça', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.85, preferencia: 'nenhuma', gif: 'batata.png' },
+{ alimento: 'Amêndoas', dia: 'terça', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+{ alimento: 'Pera', dia: 'terça', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 75, altura: 1.65, preferencia: 'frutas frescas', gif: 'pera.png' },
+{ alimento: 'Abobrinha', dia: 'terça', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'nenhuma', gif: 'abobrinha.png' },
+{ alimento: 'Salmão', dia: 'terça', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+{ alimento: 'Manga', dia: 'terça', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 60, altura: 1.65, preferencia: 'nenhuma', gif: 'manga.png' },
+{ alimento: 'Morango', dia: 'terça', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 68, altura: 1.80, preferencia: 'frutas vermelhas', gif: 'morango.png' },
+{ alimento: 'Iogurte grego', dia: 'terça', doenca: "hipertensão", restricao: 'sal', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'nenhuma', gif: 'iogurte_grego.png' },
+{ alimento: 'Grão de bico', dia: 'terça', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 69, altura: 1.70, preferencia: 'fibras', gif: 'grao_de_bico.png' },
+{ alimento: 'Macarrão integral', dia: 'terça', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 75, altura: 1.85, preferencia: 'nenhuma', gif: 'macarrao_integral.png' },
+{ alimento: 'Peito de Peru', dia: 'terça', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 80, altura: 1.70, preferencia: 'proteínas', gif: 'peito_peru.png' },
+{ alimento: 'Abacaxi', dia: 'terça', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.72, preferencia: 'nenhuma', gif: 'abacaxi.png' },
+{ alimento: 'Chia', dia: 'terça', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 60, altura: 1.65, preferencia: 'omega-3', gif: 'chia.png' },
+{ alimento: 'Camarão', dia: 'terça', doenca: "hipertensão", restricao: 'sal', vegano: 'não', peso: 90, altura: 1.80, preferencia: 'nenhuma', gif: 'camarao.png' },
+{ alimento: 'Frutas Vermelhas', dia: 'terça', doenca: "colesterol alto", restricao: 'nenhuma', vegano: 'sim', peso: 75, altura: 1.65, preferencia: 'antioxidantes', gif: 'frutas_vermelhas.png' },
+{ alimento: 'Ovo', dia: 'terça', doenca: "hipertensão", restricao: 'sal', vegano: 'não', peso: 80, altura: 1.78, preferencia: 'proteínas', gif: 'ovo.png' },
+
+
+//quarta 
+{ alimento: 'Brócolis', dia: 'quarta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'brocolis.png' },
+{ alimento: 'Peito de Peru', dia: 'quarta', doenca: "diabetes", restricao: 'açúcar', vegano: 'não', peso: 80, altura: 1.80, preferencia: 'proteínas', gif: 'peito_peru.png' },
+{ alimento: 'Arroz integral', dia: 'quarta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.75, preferencia: 'nenhuma', gif: 'arroz_integral.png' },
+{ alimento: 'Azeite de oliva', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 55, altura: 1.60, preferencia: 'omega-3', gif: 'azeite.png' },
+{ alimento: 'Fruta do Conde', dia: 'quarta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.70, preferencia: 'frutas frescas', gif: 'fruta_conde.png' },
+{ alimento: 'Batata-doce', dia: 'quarta', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 88, altura: 1.75, preferencia: 'nenhuma', gif: 'batata_doce.png' },
+{ alimento: 'Iogurte natural', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 68, altura: 1.70, preferencia: 'probióticos', gif: 'iogurte.png' },
+{ alimento: 'Couve-flor', dia: 'quarta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.68, preferencia: 'vegetais', gif: 'couve_flor.png' },
+{ alimento: 'Tilápia', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.85, preferencia: 'omega-3', gif: 'tilapia.png' },
+{ alimento: 'Mamão', dia: 'quarta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.77, preferencia: 'frutas frescas', gif: 'mamao.png' },
+{ alimento: 'Farinha de linhaça', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 68, altura: 1.65, preferencia: 'omega-3', gif: 'linhaça.png' },
+{ alimento: 'Cogumelo Shitake', dia: 'quarta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 75, altura: 1.82, preferencia: 'proteínas vegetais', gif: 'cogumelo_shitake.png' },
+{ alimento: 'Frango grelhado', dia: 'quarta', doenca: "diabetes", restricao: 'açúcar', vegano: 'não', peso: 80, altura: 1.70, preferencia: 'proteínas', gif: 'frango_grelhado.png' },
+{ alimento: 'Milho', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.60, preferencia: 'fibras', gif: 'milho.png' },
+{ alimento: 'Abacaxi', dia: 'quarta', doenca: "obesidade", restricao: 'açúcar', vegano: 'sim', peso: 85, altura: 1.72, preferencia: 'frutas cítricas', gif: 'abacaxi.png' },
+{ alimento: 'Quinoa', dia: 'quarta', doenca: "diabetes", restricao: 'carboidratos', vegano: 'sim', peso: 65, altura: 1.60, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+{ alimento: 'Pepino', dia: 'quarta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.68, preferencia: 'vegetais', gif: 'pepino.png' },
+{ alimento: 'Ovo', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 68, altura: 1.65, preferencia: 'proteínas', gif: 'ovo.png' },
+{ alimento: 'Castanha do Pará', dia: 'quarta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 77, altura: 1.78, preferencia: 'omega-3', gif: 'castanha_para.png' },
+{ alimento: 'Cenoura', dia: 'quarta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'vegetais', gif: 'cenoura.png' },
+
+//quinta 
+{ alimento: 'Beterraba', dia: 'quinta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 68, altura: 1.70, preferencia: 'vegetais', gif: 'beterraba.png' },
+{ alimento: 'Sardinha', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 76, altura: 1.75, preferencia: 'omega-3', gif: 'sardinha.png' },
+{ alimento: 'Banana', dia: 'quinta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 64, altura: 1.65, preferencia: 'nenhuma', gif: 'banana.png' },
+{ alimento: 'Espinafre', dia: 'quinta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 60, altura: 1.68, preferencia: 'vegetais verdes', gif: 'espinafre.png' },
+{ alimento: 'Frango grelhado', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.80, preferencia: 'proteínas', gif: 'frango_grelhado.png' },
+{ alimento: 'Amêndoas', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+{ alimento: 'Pêra', dia: 'quinta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 75, altura: 1.65, preferencia: 'frutas frescas', gif: 'pera.png' },
+{ alimento: 'Abobrinha', dia: 'quinta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'vegetais', gif: 'abobrinha.png' },
+{ alimento: 'Salmão', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+{ alimento: 'Laranja', dia: 'quinta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 62, altura: 1.60, preferencia: 'frutas cítricas', gif: 'laranja.png' },
+{ alimento: 'Ovos cozidos', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 80, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+{ alimento: 'Grão-de-bico', dia: 'quinta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'fibras', gif: 'grao_de_bico.png' },
+{ alimento: 'Arroz integral', dia: 'quinta', doenca: "diabetes", restricao: 'carboidratos', vegano: 'sim', peso: 70, altura: 1.80, preferencia: 'grãos integrais', gif: 'arroz_integral.png' },
+{ alimento: 'Batata-doce', dia: 'quinta', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 82, altura: 1.85, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+{ alimento: 'Peito de frango', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 70, altura: 1.72, preferencia: 'proteínas magras', gif: 'peito_de_frango.png' },
+{ alimento: 'Couve', dia: 'quinta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 68, altura: 1.67, preferencia: 'vegetais verdes', gif: 'couve.png' },
+{ alimento: 'Tilápia', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'omega-3', gif: 'tilapia.png' },
+{ alimento: 'Quinoa', dia: 'quinta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.70, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+{ alimento: 'Morango', dia: 'quinta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 66, altura: 1.70, preferencia: 'frutas vermelhas', gif: 'morango.png' },
+{ alimento: 'Avelãs', dia: 'quinta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 68, altura: 1.60, preferencia: 'fibras', gif: 'avelas.png' },
+
+//sexta
+{ alimento: 'Arroz integral', dia: 'sexta', doenca: "diabetes", restricao: 'carboidratos', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'grãos integrais', gif: 'arroz_integral.png' },
+{ alimento: 'Batata-doce', dia: 'sexta', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.80, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+{ alimento: 'Salmão', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+{ alimento: 'Abobrinha', dia: 'sexta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'vegetais', gif: 'abobrinha.png' },
+{ alimento: 'Frango grelhado', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.85, preferencia: 'proteínas magras', gif: 'frango_grelhado.png' },
+{ alimento: 'Amêndoas', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+{ alimento: 'Brócolis', dia: 'sexta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'brocolis.png' },
+{ alimento: 'Tilápia', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'omega-3', gif: 'tilapia.png' },
+{ alimento: 'Maçã', dia: 'sexta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 60, altura: 1.70, preferencia: 'frutas frescas', gif: 'maca.png' },
+{ alimento: 'Lentilha', dia: 'sexta', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 67, altura: 1.75, preferencia: 'proteínas vegetais', gif: 'lentilha.png' },
+{ alimento: 'Cenoura', dia: 'sexta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'vegetais', gif: 'cenoura.png' },
+{ alimento: 'Ovos cozidos', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 80, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+{ alimento: 'Pepino', dia: 'sexta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.80, preferencia: 'vegetais', gif: 'pepino.png' },
+{ alimento: 'Grão-de-bico', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'proteínas vegetais', gif: 'grao_de_bico.png' },
+{ alimento: 'Mamão', dia: 'sexta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 67, altura: 1.65, preferencia: 'frutas frescas', gif: 'mamao.png' },
+{ alimento: 'Aveia', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'fibras', gif: 'aveia.png' },
+{ alimento: 'Abacate', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.85, preferencia: 'gorduras saudáveis', gif: 'abacate.png' },
+{ alimento: 'Manga', dia: 'sexta', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 66, altura: 1.70, preferencia: 'frutas frescas', gif: 'manga.png' },
+{ alimento: 'Farinha de linhaça', dia: 'sexta', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 65, altura: 1.60, preferencia: 'omega-3', gif: 'linhaça.png' },
+{ alimento: 'Couve-flor', dia: 'sexta', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.70, preferencia: 'vegetais', gif: 'couve_flor.png' },
+
+//sabado
+{ alimento: 'Quinoa', dia: 'sabado', doenca: "diabetes", restricao: 'carboidratos', vegano: 'sim', peso: 65, altura: 1.75, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+{ alimento: 'Frango grelhado', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.80, preferencia: 'proteínas magras', gif: 'frango_grelhado.png' },
+{ alimento: 'Abobrinha', dia: 'sabado', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'vegetais', gif: 'abobrinha.png' },
+{ alimento: 'Batata-doce', dia: 'sabado', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.85, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+{ alimento: 'Salmão', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+{ alimento: 'Cenoura', dia: 'sabado', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'cenoura.png' },
+{ alimento: 'Abacate', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.75, preferencia: 'gorduras saudáveis', gif: 'abacate.png' },
+{ alimento: 'Tilápia', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'omega-3', gif: 'tilapia.png' },
+{ alimento: 'Mamão', dia: 'sabado', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'frutas frescas', gif: 'mamao.png' },
+{ alimento: 'Brócolis', dia: 'sabado', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.70, preferencia: 'vegetais', gif: 'brocolis.png' },
+{ alimento: 'Ovos cozidos', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 70, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+{ alimento: 'Pepino', dia: 'sabado', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.80, preferencia: 'vegetais', gif: 'pepino.png' },
+{ alimento: 'Amêndoas', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+{ alimento: 'Pêra', dia: 'sabado', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.68, preferencia: 'frutas frescas', gif: 'pera.png' },
+{ alimento: 'Farinha de linhaça', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 65, altura: 1.72, preferencia: 'omega-3', gif: 'linhaça.png' },
+{ alimento: 'Iogurte natural', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'probióticos', gif: 'iogurte.png' },
+{ alimento: 'Banana', dia: 'sabado', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 64, altura: 1.65, preferencia: 'frutas frescas', gif: 'banana.png' },
+{ alimento: 'Sardinha', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 76, altura: 1.75, preferencia: 'omega-3', gif: 'sardinha.png' },
+{ alimento: 'Grão-de-bico', dia: 'sabado', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'proteínas vegetais', gif: 'grao_de_bico.png' },
+{ alimento: 'Aveia', dia: 'sabado', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'fibras', gif: 'aveia.png' },
+
+//domingo
+{ alimento: 'Quinoa', dia: 'domingo', doenca: "diabetes", restricao: 'carboidratos', vegano: 'sim', peso: 68, altura: 1.70, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+{ alimento: 'Frango assado', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.80, preferencia: 'proteínas magras', gif: 'frango_assado.png' },
+{ alimento: 'Abobrinha', dia: 'domingo', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.72, preferencia: 'vegetais', gif: 'abobrinha.png' },
+{ alimento: 'Batata-doce', dia: 'domingo', doenca: "obesidade", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.85, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+{ alimento: 'Salmão', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+{ alimento: 'Cenoura', dia: 'domingo', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'cenoura.png' },
+{ alimento: 'Abacate', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 82, altura: 1.85, preferencia: 'gorduras saudáveis', gif: 'abacate.png' },
+{ alimento: 'Tilápia', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'omega-3', gif: 'tilapia.png' },
+{ alimento: 'Mamão', dia: 'domingo', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 67, altura: 1.60, preferencia: 'frutas frescas', gif: 'mamao.png' },
+{ alimento: 'Ovos cozidos', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 70, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+{ alimento: 'Pepino', dia: 'domingo', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.80, preferencia: 'vegetais', gif: 'pepino.png' },
+{ alimento: 'Amêndoas', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+{ alimento: 'Laranja', dia: 'domingo', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 62, altura: 1.60, preferencia: 'frutas cítricas', gif: 'laranja.png' },
+{ alimento: 'Farinha de linhaça', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'omega-3', gif: 'linhaça.png' },
+{ alimento: 'Iogurte natural', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'probióticos', gif: 'iogurte.png' },
+{ alimento: 'Banana', dia: 'domingo', doenca: "hipertensão", restricao: 'sal', vegano: 'sim', peso: 64, altura: 1.65, preferencia: 'frutas frescas', gif: 'banana.png' },
+{ alimento: 'Sardinha', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'não', peso: 76, altura: 1.75, preferencia: 'omega-3', gif: 'sardinha.png' },
+{ alimento: 'Grão-de-bico', dia: 'domingo', doenca: "anemia", restricao: 'nenhuma', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'proteínas vegetais', gif: 'grao_de_bico.png' },
+{ alimento: 'Aveia', dia: 'domingo', doenca: "colesterol alto", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'fibras', gif: 'aveia.png' },
+{ alimento: 'Manga', dia: 'domingo', doenca: "diabetes", restricao: 'açúcar', vegano: 'sim', peso: 66, altura: 1.70, preferencia: 'frutas frescas', gif: 'manga.png' }
+];
+
+
+
+
+
+
+    
+//BANCO DE DADOS MODIFICADO SIM/NÃO
+// const data = [
+//             //Segunda
+//         { alimento: 'Pão', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'pão.png' },
+// { alimento: 'Feijão', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'rosca_direta.gif' },
+// { alimento: 'Salada', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'rosca_direta.gif' },
+// { alimento: 'Hamburguer', dia: 'segunda', doenca: "sim", restricao: 'glúten', vegano: 'não', peso: 40, altura: 1.75, preferencia: 'nenhuma', gif: 'rosca_direta.gif' },
+// { alimento: 'Arroz integral', dia: 'segunda', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.80, preferencia: 'baixa gordura', gif: 'arroz.png' },
+// { alimento: 'Abacate', dia: 'segunda', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.70, preferencia: 'nenhuma', gif: 'abacate.png' },
+// { alimento: 'Quinoa', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 65, altura: 1.60, preferencia: 'orgânico', gif: 'quinoa.png' },
+// { alimento: 'Lentilha', dia: 'segunda', doenca: "sim", restricao: 'lactose', vegano: 'sim', peso: 58, altura: 1.68, preferencia: 'nenhuma', gif: 'lentilha.png' },
+// { alimento: 'Couve', dia: 'segunda', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 75, altura: 1.85, preferencia: 'nenhuma', gif: 'couve.png' },
+// { alimento: 'Batata doce', dia: 'segunda', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 95, altura: 1.78, preferencia: 'nenhuma', gif: 'batata_doce.png' },
+// { alimento: 'Grão de bico', dia: 'segunda', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 62, altura: 1.65, preferencia: 'nenhuma', gif: 'grao_de_bico.png' },
+// { alimento: 'Tofu', dia: 'segunda', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 67, altura: 1.70, preferencia: 'nenhuma', gif: 'tofu.png' },
+// { alimento: 'Mandioca', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 74, altura: 1.72, preferencia: 'nenhuma', gif: 'mandioca.png' },
+// { alimento: 'Cenoura', dia: 'segunda', doenca: "sim", restricao: 'glúten', vegano: 'sim', peso: 68, altura: 1.82, preferencia: 'nenhuma', gif: 'cenoura.png' },
+// { alimento: 'Tomate', dia: 'segunda', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 55, altura: 1.60, preferencia: 'nenhuma', gif: 'tomate.png' },
+// { alimento: 'Pepino', dia: 'segunda', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.90, preferencia: 'nenhuma', gif: 'pepino.png' },
+// { alimento: 'Beringela', dia: 'segunda', doenca: "sim", restricao: 'gordura', vegano: 'sim', peso: 85, altura: 1.75, preferencia: 'nenhuma', gif: 'beringela.png' },
+// { alimento: 'Frango grelhado', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'não', peso: 78, altura: 1.77, preferencia: 'proteínas', gif: 'frango.png' },
+// { alimento: 'Peixe', dia: 'segunda', doenca: "sim", restricao: 'sal', vegano: 'não', peso: 68, altura: 1.65, preferencia: 'omega-3', gif: 'peixe.png' },
+// { alimento: 'Maçã', dia: 'segunda', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 60, altura: 1.70, preferencia: 'frutas frescas', gif: 'maca.png' },
+
+
+// //terça 
+// { alimento: 'Aveia', dia: 'terça', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.70, preferencia: 'fibras', gif: 'aveia.png' },
+// { alimento: 'Cenoura', dia: 'terça', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'nenhuma', gif: 'cenoura.png' },
+// { alimento: 'Espinafre', dia: 'terça', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 67, altura: 1.60, preferencia: 'nenhuma', gif: 'espinafre.png' },
+// { alimento: 'Frango', dia: 'terça', doenca: "sim", restricao: 'sal', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'proteínas', gif: 'frango.png' },
+// { alimento: 'Batata', dia: 'terça', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.85, preferencia: 'nenhuma', gif: 'batata.png' },
+// { alimento: 'Amêndoas', dia: 'terça', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+// { alimento: 'Pera', dia: 'terça', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 75, altura: 1.65, preferencia: 'frutas frescas', gif: 'pera.png' },
+// { alimento: 'Abobrinha', dia: 'terça', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'nenhuma', gif: 'abobrinha.png' },
+// { alimento: 'Salmão', dia: 'terça', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+// { alimento: 'Manga', dia: 'terça', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 60, altura: 1.65, preferencia: 'nenhuma', gif: 'manga.png' },
+// { alimento: 'Morango', dia: 'terça', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 68, altura: 1.80, preferencia: 'frutas vermelhas', gif: 'morango.png' },
+// { alimento: 'Iogurte grego', dia: 'terça', doenca: "sim", restricao: 'sal', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'nenhuma', gif: 'iogurte_grego.png' },
+// { alimento: 'Grão de bico', dia: 'terça', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 69, altura: 1.70, preferencia: 'fibras', gif: 'grao_de_bico.png' },
+// { alimento: 'Macarrão integral', dia: 'terça', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 75, altura: 1.85, preferencia: 'nenhuma', gif: 'macarrao_integral.png' },
+// { alimento: 'Peito de Peru', dia: 'terça', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 80, altura: 1.70, preferencia: 'proteínas', gif: 'peito_peru.png' },
+// { alimento: 'Abacaxi', dia: 'terça', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.72, preferencia: 'nenhuma', gif: 'abacaxi.png' },
+// { alimento: 'Chia', dia: 'terça', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 60, altura: 1.65, preferencia: 'omega-3', gif: 'chia.png' },
+// { alimento: 'Camarão', dia: 'terça', doenca: "sim", restricao: 'sal', vegano: 'não', peso: 90, altura: 1.80, preferencia: 'nenhuma', gif: 'camarao.png' },
+// { alimento: 'Frutas Vermelhas', dia: 'terça', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 75, altura: 1.65, preferencia: 'antioxidantes', gif: 'frutas_vermelhas.png' },
+// { alimento: 'Ovo', dia: 'terça', doenca: "sim", restricao: 'sal', vegano: 'não', peso: 80, altura: 1.78, preferencia: 'proteínas', gif: 'ovo.png' },
+
+
+// //quarta 
+// { alimento: 'Brócolis', dia: 'quarta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'brocolis.png' },
+// { alimento: 'Peito de Peru', dia: 'quarta', doenca: "sim", restricao: 'açúcar', vegano: 'não', peso: 80, altura: 1.80, preferencia: 'proteínas', gif: 'peito_peru.png' },
+// { alimento: 'Arroz integral', dia: 'quarta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.75, preferencia: 'nenhuma', gif: 'arroz_integral.png' },
+// { alimento: 'Azeite de oliva', dia: 'quarta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 55, altura: 1.60, preferencia: 'omega-3', gif: 'azeite.png' },
+// { alimento: 'Fruta do Conde', dia: 'quarta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.70, preferencia: 'frutas frescas', gif: 'fruta_conde.png' },
+// { alimento: 'Batata-doce', dia: 'quarta', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 88, altura: 1.75, preferencia: 'nenhuma', gif: 'batata_doce.png' },
+// { alimento: 'Iogurte natural', dia: 'quarta', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 68, altura: 1.70, preferencia: 'probióticos', gif: 'iogurte.png' },
+// { alimento: 'Couve-flor', dia: 'quarta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.68, preferencia: 'vegetais', gif: 'couve_flor.png' },
+// { alimento: 'Tilápia', dia: 'quarta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.85, preferencia: 'omega-3', gif: 'tilapia.png' },
+// { alimento: 'Mamão', dia: 'quarta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.77, preferencia: 'frutas frescas', gif: 'mamao.png' },
+// { alimento: 'Farinha de linhaça', dia: 'quarta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 68, altura: 1.65, preferencia: 'omega-3', gif: 'linhaça.png' },
+// { alimento: 'Cogumelo Shitake', dia: 'quarta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 75, altura: 1.82, preferencia: 'proteínas vegetais', gif: 'cogumelo_shitake.png' },
+// { alimento: 'Frango grelhado', dia: 'quarta', doenca: "sim", restricao: 'açúcar', vegano: 'não', peso: 80, altura: 1.70, preferencia: 'proteínas', gif: 'frango_grelhado.png' },
+// { alimento: 'Milho', dia: 'quarta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.60, preferencia: 'fibras', gif: 'milho.png' },
+// { alimento: 'Abacaxi', dia: 'quarta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 85, altura: 1.72, preferencia: 'frutas cítricas', gif: 'abacaxi.png' },
+// { alimento: 'Quinoa', dia: 'quarta', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 65, altura: 1.60, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+// { alimento: 'Pepino', dia: 'quarta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.68, preferencia: 'vegetais', gif: 'pepino.png' },
+// { alimento: 'Ovo', dia: 'quarta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 68, altura: 1.65, preferencia: 'proteínas', gif: 'ovo.png' },
+// { alimento: 'Castanha do Pará', dia: 'quarta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 77, altura: 1.78, preferencia: 'omega-3', gif: 'castanha_para.png' },
+// { alimento: 'Cenoura', dia: 'quarta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'vegetais', gif: 'cenoura.png' },
+
+// //quinta 
+// { alimento: 'Beterraba', dia: 'quinta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 68, altura: 1.70, preferencia: 'vegetais', gif: 'beterraba.png' },
+// { alimento: 'Sardinha', dia: 'quinta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 76, altura: 1.75, preferencia: 'omega-3', gif: 'sardinha.png' },
+// { alimento: 'Banana', dia: 'quinta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 64, altura: 1.65, preferencia: 'nenhuma', gif: 'banana.png' },
+// { alimento: 'Espinafre', dia: 'quinta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 60, altura: 1.68, preferencia: 'vegetais verdes', gif: 'espinafre.png' },
+// { alimento: 'Frango grelhado', dia: 'quinta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.80, preferencia: 'proteínas', gif: 'frango_grelhado.png' },
+// { alimento: 'Amêndoas', dia: 'quinta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+// { alimento: 'Pêra', dia: 'quinta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 75, altura: 1.65, preferencia: 'frutas frescas', gif: 'pera.png' },
+// { alimento: 'Abobrinha', dia: 'quinta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'vegetais', gif: 'abobrinha.png' },
+// { alimento: 'Salmão', dia: 'quinta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+// { alimento: 'Laranja', dia: 'quinta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 62, altura: 1.60, preferencia: 'frutas cítricas', gif: 'laranja.png' },
+// { alimento: 'Ovos cozidos', dia: 'quinta', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 80, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+// { alimento: 'Grão-de-bico', dia: 'quinta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'fibras', gif: 'grao_de_bico.png' },
+// { alimento: 'Arroz integral', dia: 'quinta', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 70, altura: 1.80, preferencia: 'grãos integrais', gif: 'arroz_integral.png' },
+// { alimento: 'Batata-doce', dia: 'quinta', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 82, altura: 1.85, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+// { alimento: 'Peito de frango', dia: 'quinta', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 70, altura: 1.72, preferencia: 'proteínas magras', gif: 'peito_de_frango.png' },
+// { alimento: 'Couve', dia: 'quinta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 68, altura: 1.67, preferencia: 'vegetais verdes', gif: 'couve.png' },
+// { alimento: 'Tilápia', dia: 'quinta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'omega-3', gif: 'tilapia.png' },
+// { alimento: 'Quinoa', dia: 'quinta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.70, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+// { alimento: 'Morango', dia: 'quinta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 66, altura: 1.70, preferencia: 'frutas vermelhas', gif: 'morango.png' },
+// { alimento: 'Avelãs', dia: 'quinta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 68, altura: 1.60, preferencia: 'fibras', gif: 'avelas.png' },
+
+// //sexta
+// { alimento: 'Arroz integral', dia: 'sexta', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'grãos integrais', gif: 'arroz_integral.png' },
+// { alimento: 'Batata-doce', dia: 'sexta', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.80, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+// { alimento: 'Salmão', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+// { alimento: 'Abobrinha', dia: 'sexta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'vegetais', gif: 'abobrinha.png' },
+// { alimento: 'Frango grelhado', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.85, preferencia: 'proteínas magras', gif: 'frango_grelhado.png' },
+// { alimento: 'Amêndoas', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+// { alimento: 'Brócolis', dia: 'sexta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'brocolis.png' },
+// { alimento: 'Tilápia', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'omega-3', gif: 'tilapia.png' },
+// { alimento: 'Maçã', dia: 'sexta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 60, altura: 1.70, preferencia: 'frutas frescas', gif: 'maca.png' },
+// { alimento: 'Lentilha', dia: 'sexta', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 67, altura: 1.75, preferencia: 'proteínas vegetais', gif: 'lentilha.png' },
+// { alimento: 'Cenoura', dia: 'sexta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'vegetais', gif: 'cenoura.png' },
+// { alimento: 'Ovos cozidos', dia: 'sexta', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 80, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+// { alimento: 'Pepino', dia: 'sexta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.80, preferencia: 'vegetais', gif: 'pepino.png' },
+// { alimento: 'Grão-de-bico', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'proteínas vegetais', gif: 'grao_de_bico.png' },
+// { alimento: 'Mamão', dia: 'sexta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 67, altura: 1.65, preferencia: 'frutas frescas', gif: 'mamao.png' },
+// { alimento: 'Aveia', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'fibras', gif: 'aveia.png' },
+// { alimento: 'Abacate', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.85, preferencia: 'gorduras saudáveis', gif: 'abacate.png' },
+// { alimento: 'Manga', dia: 'sexta', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 66, altura: 1.70, preferencia: 'frutas frescas', gif: 'manga.png' },
+// { alimento: 'Farinha de linhaça', dia: 'sexta', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 65, altura: 1.60, preferencia: 'omega-3', gif: 'linhaça.png' },
+// { alimento: 'Couve-flor', dia: 'sexta', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.70, preferencia: 'vegetais', gif: 'couve_flor.png' },
+
+// //sabado
+// { alimento: 'Quinoa', dia: 'sabado', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 65, altura: 1.75, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+// { alimento: 'Frango grelhado', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.80, preferencia: 'proteínas magras', gif: 'frango_grelhado.png' },
+// { alimento: 'Abobrinha', dia: 'sabado', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 68, altura: 1.77, preferencia: 'vegetais', gif: 'abobrinha.png' },
+// { alimento: 'Batata-doce', dia: 'sabado', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.85, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+// { alimento: 'Salmão', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+// { alimento: 'Cenoura', dia: 'sabado', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'cenoura.png' },
+// { alimento: 'Abacate', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 80, altura: 1.75, preferencia: 'gorduras saudáveis', gif: 'abacate.png' },
+// { alimento: 'Tilápia', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'omega-3', gif: 'tilapia.png' },
+// { alimento: 'Mamão', dia: 'sabado', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.65, preferencia: 'frutas frescas', gif: 'mamao.png' },
+// { alimento: 'Brócolis', dia: 'sabado', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.70, preferencia: 'vegetais', gif: 'brocolis.png' },
+// { alimento: 'Ovos cozidos', dia: 'sabado', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 70, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+// { alimento: 'Pepino', dia: 'sabado', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.80, preferencia: 'vegetais', gif: 'pepino.png' },
+// { alimento: 'Amêndoas', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+// { alimento: 'Pêra', dia: 'sabado', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 70, altura: 1.68, preferencia: 'frutas frescas', gif: 'pera.png' },
+// { alimento: 'Farinha de linhaça', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 65, altura: 1.72, preferencia: 'omega-3', gif: 'linhaça.png' },
+// { alimento: 'Iogurte natural', dia: 'sabado', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'probióticos', gif: 'iogurte.png' },
+// { alimento: 'Banana', dia: 'sabado', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 64, altura: 1.65, preferencia: 'frutas frescas', gif: 'banana.png' },
+// { alimento: 'Sardinha', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 76, altura: 1.75, preferencia: 'omega-3', gif: 'sardinha.png' },
+// { alimento: 'Grão-de-bico', dia: 'sabado', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'proteínas vegetais', gif: 'grao_de_bico.png' },
+// { alimento: 'Aveia', dia: 'sabado', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'fibras', gif: 'aveia.png' },
+
+// //domingo
+// { alimento: 'Quinoa', dia: 'domingo', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 68, altura: 1.70, preferencia: 'grãos integrais', gif: 'quinoa.png' },
+// { alimento: 'Frango assado', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 75, altura: 1.80, preferencia: 'proteínas magras', gif: 'frango_assado.png' },
+// { alimento: 'Abobrinha', dia: 'domingo', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 70, altura: 1.72, preferencia: 'vegetais', gif: 'abobrinha.png' },
+// { alimento: 'Batata-doce', dia: 'domingo', doenca: "sim", restricao: 'carboidratos', vegano: 'sim', peso: 85, altura: 1.85, preferencia: 'carboidratos complexos', gif: 'batata_doce.png' },
+// { alimento: 'Salmão', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 90, altura: 1.70, preferencia: 'omega-3', gif: 'salmao.png' },
+// { alimento: 'Cenoura', dia: 'domingo', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 64, altura: 1.68, preferencia: 'vegetais', gif: 'cenoura.png' },
+// { alimento: 'Abacate', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 82, altura: 1.85, preferencia: 'gorduras saudáveis', gif: 'abacate.png' },
+// { alimento: 'Tilápia', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 78, altura: 1.80, preferencia: 'omega-3', gif: 'tilapia.png' },
+// { alimento: 'Mamão', dia: 'domingo', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 67, altura: 1.60, preferencia: 'frutas frescas', gif: 'mamao.png' },
+// { alimento: 'Ovos cozidos', dia: 'domingo', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 70, altura: 1.75, preferencia: 'proteínas', gif: 'ovos_cozidos.png' },
+// { alimento: 'Pepino', dia: 'domingo', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 72, altura: 1.80, preferencia: 'vegetais', gif: 'pepino.png' },
+// { alimento: 'Amêndoas', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 63, altura: 1.67, preferencia: 'fibras', gif: 'amendoas.png' },
+// { alimento: 'Laranja', dia: 'domingo', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 62, altura: 1.60, preferencia: 'frutas cítricas', gif: 'laranja.png' },
+// { alimento: 'Farinha de linhaça', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'omega-3', gif: 'linhaça.png' },
+// { alimento: 'Iogurte natural', dia: 'domingo', doenca: "sim", restricao: 'gordura', vegano: 'não', peso: 72, altura: 1.75, preferencia: 'probióticos', gif: 'iogurte.png' },
+// { alimento: 'Banana', dia: 'domingo', doenca: "sim", restricao: 'sal', vegano: 'sim', peso: 64, altura: 1.65, preferencia: 'frutas frescas', gif: 'banana.png' },
+// { alimento: 'Sardinha', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'não', peso: 76, altura: 1.75, preferencia: 'omega-3', gif: 'sardinha.png' },
+// { alimento: 'Grão-de-bico', dia: 'domingo', doenca: "sim", restricao: 'nenhuma', vegano: 'sim', peso: 74, altura: 1.70, preferencia: 'proteínas vegetais', gif: 'grao_de_bico.png' },
+// { alimento: 'Aveia', dia: 'domingo', doenca: "sim", restricao: 'gordura saturada', vegano: 'sim', peso: 70, altura: 1.75, preferencia: 'fibras', gif: 'aveia.png' },
+// { alimento: 'Manga', dia: 'domingo', doenca: "sim", restricao: 'açúcar', vegano: 'sim', peso: 66, altura: 1.70, preferencia: 'frutas frescas', gif: 'manga.png' }
+
+// ];
+
+
+
+
+
+
+
+
+
+
+        function gerarPlanoTreino(doenca, restricao, vegano, preferencia, altura, peso, objetivo) {
+            altura = parseFloat(altura);
+            peso = parseFloat(peso);
+
+            const alturaMin = altura - 0.30;
+            const alturaMax = altura + 0.30;
+            const pesoMin = peso - 30;
+            const pesoMax = peso + 30;
+
+            const filteredData = data.filter(ali =>
+                ali.doenca.toLowerCase() === doenca &&
+                ali.restricao.toLowerCase() === restricao &&
+                // ali.obj.toLowerCase() === objetivo &&
+                ali.vegano.toLowerCase() === vegano &&
+                ali.preferencia.toLowerCase().includes(preferencia) &&
+                ali.altura >= alturaMin && ali.altura <= alturaMax &&
+                ali.peso >= pesoMin && ali.peso <= pesoMax
+            );
+
+            const plano = {};
+            ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo'].forEach(part => {
+                const alimentos = filteredData.filter(ali => ali.dia === part).map(ali => ({
+                    alimento: ali.alimento,
+                    gif: ali.gif // Adiciona o GIF ao plano
+                }));
+                plano[part] = alimentos.slice(0, 6);
+            });
+            return plano;
+        }
+
+        function onGenerateClick() {
+            const doenca = document.getElementById('doenca').value.trim().toLowerCase();
+            const restricao = document.getElementById('restricao').value.trim().toLowerCase();
+            const vegano = document.getElementById('vegano').value.trim().toLowerCase();
+            const preferencia = document.getElementById('preferencia').value.trim().toLowerCase();
+            const altura = document.getElementById('altura').value;
+            const peso = document.getElementById('peso').value;
+            // const objetivo = document.getElementById('objetivo').value.trim().toLowerCase();
+
+            const plano = gerarPlanoTreino(doenca, restricao, vegano, preferencia, altura, peso);
+
+            // Armazena os dados no localStorage
+            localStorage.setItem('planonutricao', JSON.stringify(plano));
+            localStorage.setItem('doenca', document.getElementById('doenca').value.trim());
+            localStorage.setItem('altura', altura);
+            localStorage.setItem('peso', peso);
+            // localStorage.setItem('objetivo', objetivo);
+
+            // Redireciona para a página muscle-page.html
+            window.location.href = 'muscle-page.html';
+        }
+    </script>
+</body>
+</html>
+
+
+
+

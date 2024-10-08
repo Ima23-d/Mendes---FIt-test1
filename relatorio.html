@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Corrida</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Faz com que o body ocupe toda a altura da tela */
+            background: linear-gradient(-45deg, rgb(3, 212, 3), rgb(5, 122, 5));
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-color: #01e425;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px; /* Adiciona um limite máximo de largura */
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 45px;
+            color: white;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 24px; /* Corrigido para incluir "px" */
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório de Corrida</h1>
+        <canvas id="distanceChart" width="400" height="200"></canvas>
+        <div class="info">
+            <p id="reportTime">Tempo: 0 h 0 m 0 s</p>
+            <p id="reportDistance">Distância: 0 km</p>
+            <p id="reportCalories">Calorias: 0</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Obtém os dados do localStorage
+        const distance = parseFloat(localStorage.getItem('distance')) || 0;
+        const elapsedTime = parseFloat(localStorage.getItem('elapsedTime')) || 0;
+        const calories = parseFloat(localStorage.getItem('calories')) || 0;
+
+        // Dados do gráfico
+        const ctx = document.getElementById('distanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',  // Tipo de gráfico
+            data: {
+                labels: ['Resumo'],  // Label da barra
+                datasets: [
+                    {
+                        label: 'Distância (km)',
+                        data: [distance],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        stack: 'stack1'
+                        
+                    },
+                    {
+                        label: 'Calorias queimadas',
+                        data: [calories / 100],  // Divida para visualizar em uma escala razoável
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1,
+                        stack: 'stack2'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stacked: true
+                    }
+                }
+            }
+        });
+
+        // Atualiza os valores de relatório com dados do localStorage
+        document.getElementById('reportTime').textContent = `Tempo: ${formatTime(elapsedTime)}`;
+        document.getElementById('reportDistance').textContent = `Distância: ${distance.toFixed(2)} km`;
+        document.getElementById('reportCalories').textContent = `Calorias: ${calories.toFixed(2)}`;
+
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${hours} h ${minutes} m ${secs} s`;
+        }
+    </script>
+</body>
+</html>

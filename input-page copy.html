@@ -1,0 +1,835 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Treino - Informações</title>
+    <link rel="shortcut icon" href="favicon_io (6)/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Mova o CSS para um arquivo externo, se necessário -->
+</head>
+<body>
+    <style>
+                body {
+        font-family: Arial, sans-serif;
+        background-color:#03B403;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    .container {
+        
+        margin: 30px;
+        background: #03B403;
+        padding: 20px;
+        border-radius: 20px;
+        width: 320px;
+        height: 400px;
+        background-color: black;
+        
+ 
+       
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: white;
+    
+    }
+
+    input {
+        width: calc(100% - 24px);
+        padding: 5px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        height: 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        
+    }
+
+    input:hover {
+        color: white;
+        background-color: rgb(10, 228, 10);
+        transform: scale(1.1);
+        
+    }
+    
+
+
+
+
+    button {
+        padding: 10px 15px;
+        background-color: #01e425;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 330px;
+        height: 40px;
+
+    }
+
+    button:hover {
+        background-color: #01c221;
+ 
+    }
+
+    .muscle-container {
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+    .muscle-container button {
+        padding: 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    .muscle-container button:hover {
+        background-color: #0056b3;
+    }
+
+    .exercise-container {
+        background-color: black;
+        border-radius: 20px;
+        
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: white;
+        width: 300px;
+        height: 70px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        text-align: center;
+        margin-left: -17px;
+    }
+
+    .exercise-container img {
+        width: 180px;
+        height: 125px;
+        border-radius: 10px;
+        margin-right: 20px;
+    }
+
+    .exercise-container p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .back-button {
+        padding: 10px 15px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .back-button:hover {
+        background-color: #c82333;
+        
+    }
+
+    .form-box {
+        background-image: url('treino de braço.png');
+    }
+
+    .container1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+
+
+    .form-box,
+    .form-box2,
+    .form-box3,
+    .form-box4,
+    .form-box5,
+    .form-box6,
+    .form-box7 {
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        
+        height: 90px;
+        width: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        margin: 15px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+        cursor: pointer;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-decoration: none;
+        margin-left: -18px;
+    }
+
+
+
+    .form-box2 {
+        background-image: url('treino de costa.png');
+    }
+
+    .form-box3 {
+        background-image: url('treino de abdômen.png');
+    }
+
+    .form-box4 {
+        background-image: url('treino de perna.png');
+    }
+
+    .form-box5 {
+        background-image: url('treio de peito.png');
+    }
+
+    .form-box6 {
+        background-image: url('treino de ombros.png');
+    }
+
+    .form-box7 {
+        background-image: url("treino de gluteo.jpg");
+    }
+
+
+    .form-box:hover,
+    .form-box2:hover,
+    .form-box3:hover,
+    .form-box4:hover,
+    .form-box5:hover,
+    .form-box6:hover,
+    .form-box7:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 40px rgba(8, 218, 200, 0.5);
+    }
+
+    .container1:hover > .form-box:not(:hover),
+    .container1:hover > .form-box2:not(:hover),
+    .container1:hover > .form-box3:not(:hover),
+    .container1:hover > .form-box4:not(:hover),
+    .container1:hover > .form-box5:not(:hover),
+    .container1:hover > .form-box6:not(:hover),
+    .container1:hover > .form-box7:not(:hover) {
+        filter: blur(10px);
+        transform: scale(0.9);
+    }
+
+
+
+
+
+    .treinos {
+        font-size: 45px;
+        margin: 10px;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .treinos a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .treinos a:hover {
+        text-decoration: none;
+    }
+
+    .menu-icon {
+        font-size: 30px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 250px;
+        height: 100%;
+        background-color: #03B403;
+        color: white;
+        padding: 20px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 10px 40px black;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .sidebar ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .navbar a i {
+        margin-bottom: 3px;
+        font-size: 20px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: rgb(8, 218, 8);
+    }
+
+    @media (min-width: 600px) {
+        .navbar a {
+            font-size: 20px;
+        }
+
+        .navbar a i {
+            font-size: 24px;
+        }
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 50px;
+        color: white;
+    }
+    a{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    ul{
+        text-decoration: none;
+    }
+
+
+
+
+    .modal {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 600px;
+        background-color: rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        z-index: 1;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(100%);
+        overflow-x: hidden;
+    }
+
+    .modal-content {
+        background-color: rgb(0, 0, 0);
+        
+        border: 1px solid #888;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -10px 40px black;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease-in-out;
+        overflow-x: hidden;
+    }
+
+    .close {
+        color: rgb(41, 240, 1);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: white;
+        text-decoration: none;
+    }
+
+    .container2{
+    background-color: transparent;
+    }
+
+    .peso{
+        color:white;
+    }
+
+    .altura{
+        color: white;
+    }
+
+    .container-black{
+       
+       background-color: black;
+       width: 320px;
+       height: 250px;
+       margin: auto;
+       padding: 20px;
+       border-radius: 20px;
+       margin-bottom: 30px;
+   }
+
+    </style>
+    <div class="container" id="input-page">
+        <h1>Informações</h1>
+
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" placeholder="Ex: homem, mulher">
+
+        <label for="nivel">Nível:</label>
+        <input type="text" id="nivel" placeholder="Ex: básico, intermediário, avançado">
+
+        <label for="doenca">Doença:</label>
+        <input type="text" id="doenca" placeholder="Ex: asma, nenhuma">
+    </div>
+
+    <div class="container-black" id="input-page">
+        <label for="altura">Altura (em metros):</label>
+        <input type="range" id="altura" min="1.20" max="2.20" step="0.01" value="1.75" oninput="updateRangeValue('altura')">
+        <div id="altura-value" class="altura">Altura: 1.75m</div>
+
+        <label for="peso">Peso (em kg):</label>
+        <input type="range" id="peso" min="30" max="150" step="1" value="70" oninput="updateRangeValue('peso')">
+        <div id="peso-value" class="peso">Peso: 70kg</div>
+
+       
+
+        <button onclick="onGenerateClick()">Próximo</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Função para atualizar os valores do input range
+       // Função para atualizar os valores do input range
+ // Função para atualizar os valores do input range
+ function updateRangeValue(id) {
+            const value = document.getElementById(id).value;
+            document.getElementById(`${id}-value`).innerText = `${id.charAt(0).toUpperCase() + id.slice(1)}: ${value}${id === 'altura' ? 'm' : 'kg'}`;
+        }
+
+        const data = [
+    
+    // Exercicio braço homen
+    { exercise: 'Rosca direta', body_part: 'braço', sex: 'homem', level_1: 'básico', peso: 42, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps na polia', body_part: 'braço', sex: 'homem', level_1: 'básico', peso: 50, altura: 1.75, doenca: 'nenhuma',  gif: '' },
+    { exercise: 'Rosca martelo', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 38, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps francês', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 52, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca concentrada', body_part: 'braço', sex: 'homem', level_1: 'básico', peso: 47, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps testa', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 49, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca Scott', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 58, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps coice', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 44, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca alternada', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 41, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Tríceps kickback', body_part: 'braço', sex: 'homem', level_1: 'básico', peso: 55, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Rosca direta com barra', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 43, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps mergulho', body_part: 'braço', sex: 'homem', level_1: 'básico', peso: 80, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca spider', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 53, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps na paralela', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 60, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca Zottman', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 39, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps testa com halteres', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 48, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca concentrada com halteres', body_part: 'braço', sex: 'homem', level_1: 'básico', peso: 35, altura: 1.75, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Tríceps unilateral na polia', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 42, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Rosca inversa', body_part: 'braço', sex: 'homem', level_1: 'avançado', peso: 49, altura: 1.75, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps overhead', body_part: 'braço', sex: 'homem', level_1: 'intermediário', peso: 45, altura: 1.75, doenca: 'nenhuma', gif: '' },
+
+    { exercise: 'Rosca direta', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 38, altura: 1.65, doenca: 'nenhuma',  gif: '' }, // Variado
+    { exercise: 'Tríceps na polia', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 34, altura: 1.65, doenca: 'nenhuma',  gif: '' }, // Variado
+    { exercise: 'Rosca martelo', body_part: 'braço', sex: 'mulher', level_1: 'intermediário', peso: 37, altura: 1.65, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Tríceps coice', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca concentrada', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 33, altura: 1.65, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Tríceps francês com halteres', body_part: 'braço', sex: 'mulher', level_1: 'intermediário', peso: 36, altura: 1.65, doenca: 'nenhuma', gif: '' }, // Variado
+    { exercise: 'Rosca Scott', body_part: 'braço', sex: 'mulher', level_1: 'avançado', peso: 41, altura: 1.65, doenca: 'nenhuma',gif: '' },
+    { exercise: 'Tríceps kickback', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 33, altura: 1.65, doenca: 'nenhuma',  gif: '' },
+    { exercise: 'Rosca alternada', body_part: 'braço', sex: 'mulher', level_1: 'intermediário', peso: 35, altura: 1.65, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Tríceps na corda', body_part: 'braço', sex: 'mulher', level_1: 'intermediário', peso: 36, altura: 1.65, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca direta com barra', body_part: 'braço', sex: 'mulher', level_1: 'intermediário', peso: 39, altura: 1.65, doenca: 'nenhuma',  gif: '' }, // Variado
+    { exercise: 'Tríceps unilateral', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca spider', body_part: 'braço', sex: 'mulher', level_1: 'avançado', peso: 38, altura: 1.65, doenca: 'nenhuma',  gif: '' },
+    { exercise: 'Tríceps overhead com halteres', body_part: 'braço', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: '' },
+    { exercise: 'Rosca Zottman', body_part: 'braço', sex: 'mulher', level_1: 'intermediário', peso: 34, altura: 1.65, doenca: 'nenhuma',gif: '' }, 
+
+
+
+    // Exercicio costa
+    { exercise: 'Remada curvada', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'remada_curvada.gif' },
+    { exercise: 'Puxada frontal', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 46, altura: 1.75, doenca: 'nenhuma', gif: 'puxada_frontal.gif' },
+    { exercise: 'Remada alta', body_part: 'costa', sex: 'homem', level_1: 'intermediário', peso: 50, altura: 1.75, doenca: 'nenhuma', gif: 'remada_alta.gif' }, // Aumentado para intermediário
+    { exercise: 'Puxada alta', body_part: 'costa', sex: 'homem', level_1: 'avançado', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'puxada_alta.gif' },
+    { exercise: 'Barra fixa', body_part: 'costa', sex: 'homem', level_1: 'intermediário', peso: 35, altura: 1.75, doenca: 'nenhuma', gif: 'barra_fixa.gif' }, // Aumentado para mais que 30
+    { exercise: 'Remada unilateral', body_part: 'costa', sex: 'homem', level_1: 'avançado', peso: 55, altura: 1.75, doenca: 'nenhuma', gif: 'remada_unilateral.gif' }, // Aumentado para avançado
+    { exercise: 'Levantamento terra', body_part: 'costa', sex: 'homem', level_1: 'avançado', peso: 126, altura: 1.75, doenca: 'nenhuma', gif: 'levantamento_terra.gif' },
+    { exercise: 'Remada baixa', body_part: 'costa', sex: 'homem', level_1: 'intermediário', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'remada_baixa.gif' },
+    { exercise: 'Puxada no graviton', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 35, altura: 1.75, doenca: 'nenhuma', gif: 'puxada_graviton.gif' }, // Aumentado para mais que 30
+    { exercise: 'Remada na máquina', body_part: 'costa', sex: 'homem', level_1: 'intermediário', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'remada_maquina.gif' },
+    { exercise: 'Puxada supinada', body_part: 'costa', sex: 'homem', level_1: 'intermediário', peso: 55, altura: 1.75, doenca: 'nenhuma', gif: 'puxada_supinada.gif' },
+    { exercise: 'Remada com halteres', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 36, altura: 1.75, doenca: 'nenhuma', gif: 'remada_halteres.gif' }, // Aumentado para mais que 30
+    { exercise: 'Puxada com triângulo', body_part: 'costa', sex: 'homem', level_1: 'avançado', peso: 75, altura: 1.75, doenca: 'nenhuma', gif: 'puxada_triangulo.gif' },
+    { exercise: 'Encolhimento de ombros', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 46, altura: 1.75, doenca: 'nenhuma', gif: 'encolhimento_ombros.gif' },
+    { exercise: 'Superman', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 32, altura: 1.75, doenca: 'nenhuma', gif: 'superman.gif' }, // Aumentado para mais que 30
+    { exercise: 'Ponte invertida', body_part: 'costa', sex: 'homem', level_1: 'básico', peso: 32, altura: 1.75, doenca: 'nenhuma', gif: 'ponte_invertida.gif' }, // Aumentado para mais que 30
+    { exercise: 'Puxada com pegada neutra', body_part: 'costa', sex: 'homem', level_1: 'intermediário', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'puxada_pegada_neutra.gif' },
+    { exercise: 'Levantamento terra sumô', body_part: 'costa', sex: 'homem', level_1: 'avançado', peso: 136, altura: 1.75, doenca: 'nenhuma', gif: 'levantamento_terra_sumo.gif' },
+    { exercise: 'Remada cavalinho', body_part: 'costa', sex: 'homem', level_1: 'avançado', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'remada_cavalinho.gif' },
+
+    { exercise: 'Remada curvada', body_part: 'costa', sex: 'mulher', level_1: 'básico', peso: 38, altura: 1.65, doenca: 'nenhuma', gif: 'remada_curvada_mulher.gif' }, // Variado
+    { exercise: 'Puxada frontal', body_part: 'costa', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_frontal_mulher.gif' }, // Variado
+    { exercise: 'Remada alta', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 40, altura: 1.65, doenca: 'nenhuma', gif: 'remada_alta_mulher.gif' }, // Aumentado para intermediário
+    { exercise: 'Levantamento terra', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'levantamento_terra_mulher.gif' },
+    { exercise: 'Puxada supinada', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 46, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_supinada_mulher.gif' },
+    { exercise: 'Remada unilateral', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 38, altura: 1.65, doenca: 'nenhuma', gif: 'remada_unilateral_mulher.gif' }, // Variado
+    { exercise: 'Puxada com corda', body_part: 'costa', sex: 'mulher', level_1: 'avançado', peso: 46, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_corda_mulher.gif' },
+    { exercise: 'Levantamento stiff', body_part: 'costa', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'levantamento_stiff_mulher.gif' },
+    { exercise: 'Remada baixa na máquina', body_part: 'costa', sex: 'mulher', level_1: 'básico', peso: 35, altura: 1.65, doenca: 'nenhuma', gif: 'remada_baixa_maquina_mulher.gif' },
+    { exercise: 'Remada na barra T', body_part: 'costa', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'remada_barraT_mulher.gif' },
+    { exercise: 'Superman', body_part: 'costa', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: 'superman_mulher.gif' }, // Aumentado para mais que 30
+    { exercise: 'Puxada no graviton', body_part: 'costa', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_graviton_mulher.gif' }, // Aumentado para mais que 30
+    { exercise: 'Remada curvada com barra', body_part: 'costa', sex: 'mulher', level_1: 'avançado', peso: 45, altura: 1.65, doenca: 'nenhuma', gif: 'remada_curvada_barra_mulher.gif' },
+    { exercise: 'Puxada com pegada inversa', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 46, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_pegada_inversa_mulher.gif' },
+    { exercise: 'Barra fixa assistida', body_part: 'costa', sex: 'mulher', level_1: 'básico', peso: 32, altura: 1.65, doenca: 'nenhuma', gif: 'barra_fixa_assistida_mulher.gif' }, // Aumentado para mais que 30
+    { exercise: 'Remada sentada', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 35, altura: 1.65, doenca: 'nenhuma', gif: 'remada_sentada_mulher.gif' },
+    { exercise: 'Puxada alta', body_part: 'costa', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_alta_mulher.gif' },
+    { exercise: 'Encolhimento com barra', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 46, altura: 1.65, doenca: 'nenhuma', gif: 'encolhimento_barra_mulher.gif' },
+    { exercise: 'Puxada com pegada neutra', body_part: 'costa', sex: 'mulher', level_1: 'intermediário', peso: 46, altura: 1.65, doenca: 'nenhuma', gif: 'puxada_pegada_neutra_mulher.gif' },
+    { exercise: 'Levantamento terra sumô', body_part: 'costa', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'levantamento_terra_sumo_mulher.gif' },
+
+
+
+    // Exercícios para homens - abdômen (26 exercícios)
+    { exercise: 'Prancha', body_part: 'abdômen', sex: 'homem', level_1: 'básico', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'prancha.gif' },
+    { exercise: 'Crunch abdominal', body_part: 'abdômen', sex: 'homem', level_1: 'básico', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'crunch_abdominal.gif' },
+    { exercise: 'Abdominal infra', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_infra.gif' },
+    { exercise: 'Abdominal alternado', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_alternado.gif' },
+    { exercise: 'Elevação de pernas', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_pernas.gif' },
+    { exercise: 'Abdominal na roda', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_roda.gif' },
+    { exercise: 'Abdominal oblíquo', body_part: 'abdômen', sex: 'homem', level_1: 'básico', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_obliquo.gif' },
+    { exercise: 'Prancha lateral', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'prancha_lateral.gif' },
+    { exercise: 'Abdominal com torção', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_torcao.gif' },
+    { exercise: 'Abdominal bicicleta', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_bicicleta.gif' },
+    { exercise: 'Abdominal V-up', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_vup.gif' },
+    { exercise: 'Mountain climbers', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'mountain_climbers.gif' },
+    { exercise: 'Abdominal reverso', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_reverso.gif' },
+    { exercise: 'Prancha com elevação de pernas', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'prancha_elevacao_pernas.gif' },
+    { exercise: 'Abdominal em L', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_em_l.gif' },
+    { exercise: 'Prancha com rotação', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'prancha_rotacao.gif' },
+    { exercise: 'Abdominal com peso', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso: 5, altura: 1.75, doenca: 'nenhuma', gif: 'abdominal_com_peso.gif' },
+    { exercise: 'Rollout na roda', body_part: 'abdômen', sex: 'homem', level_1: 'avançado', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'rollout_roda.gif' },
+    { exercise: 'Prancha no bosu', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'prancha_bosu.gif' },
+    { exercise: 'Abdominal escalador cruzado', body_part: 'abdômen', sex: 'homem', level_1: 'intermediário', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'escalador_cruzado.gif' },
+    { exercise: 'Prancha', body_part: 'abdômen', sex: 'mulher', level_1: 'básico', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_mulher.gif' },
+    { exercise: 'Crunch abdominal', body_part: 'abdômen', sex: 'mulher', level_1: 'básico', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'crunch_abdominal_mulher.gif' },
+    { exercise: 'Abdominal infra', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_infra_mulher.gif' },
+    { exercise: 'Abdominal bicicleta', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_bicicleta_mulher.gif' },
+    { exercise: 'Elevação de pernas', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_pernas_mulher.gif' },
+    { exercise: 'Prancha lateral', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_lateral_mulher.gif' },
+    { exercise: 'Abdominal oblíquo', body_part: 'abdômen', sex: 'mulher', level_1: 'básico', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_obliquo_mulher.gif' },
+    { exercise: 'Mountain climbers', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'mountain_climbers_mulher.gif' },
+    { exercise: 'Prancha com elevação de pernas', body_part: 'abdômen', sex: 'mulher', level_1: 'avançado', peso:60, altura: 1.65, doenca: 'nenhuma', gif:"#" },
+    { exercise: 'Prancha', body_part: 'abdômen', sex: 'mulher', level_1: 'básico', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_mulher.gif' },
+    { exercise: 'Crunch abdominal', body_part: 'abdômen', sex: 'mulher', level_1: 'básico', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'crunch_abdominal_mulher.gif' },
+    { exercise: 'Abdominal infra', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_infra_mulher.gif' },
+    { exercise: 'Abdominal bicicleta', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_bicicleta_mulher.gif' },
+    { exercise: 'Elevação de pernas', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_pernas_mulher.gif' },
+    { exercise: 'Prancha lateral', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_lateral_mulher.gif' },
+    { exercise: 'Abdominal oblíquo', body_part: 'abdômen', sex: 'mulher', level_1: 'básico', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_obliquo_mulher.gif' },
+    { exercise: 'Mountain climbers', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'mountain_climbers_mulher.gif' },
+    { exercise: 'Prancha com elevação de pernas', body_part: 'abdômen', sex: 'mulher', level_1: 'avançado', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_elevacao_pernas_mulher.gif' },
+    { exercise: 'Abdominal com bola', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_bola_mulher.gif' },
+    { exercise: 'Prancha com toque de ombro', body_part: 'abdômen', sex: 'mulher', level_1: 'avançado', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_toque_ombro_mulher.gif' },
+    { exercise: 'Abdominal com os pés no banco', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_pes_banco_mulher.gif' },
+    { exercise: 'Russian twist', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'russian_twist_mulher.gif' },
+    { exercise: 'Elevador de quadril com bola', body_part: 'abdômen', sex: 'mulher', level_1: 'avançado', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'elevador_quadril_bola_mulher.gif' },
+    { exercise: 'Prancha com flexão de joelhos', body_part: 'abdômen', sex: 'mulher', level_1: 'avançado', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'prancha_flexao_joelhos_mulher.gif' },
+    { exercise: 'Abdominal vertical', body_part: 'abdômen', sex: 'mulher', level_1: 'avançado', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_vertical_mulher.gif' },
+    { exercise: 'Abdominal na bola suíça', body_part: 'abdômen', sex: 'mulher', level_1: 'intermediário', peso:60, altura: 1.65, doenca: 'nenhuma', gif: 'abdominal_bola_suica_mulher.gif' },
+
+
+
+    // Exercicio de gluteo 
+    { exercise: 'Agachamento', body_part: 'glúteo', sex: 'homem', level_1: 'básico', peso:60, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento.gif' },
+    { exercise: 'Afundo', body_part: 'glúteo', sex: 'homem', level_1: 'básico', peso: 65, altura: 1.75, doenca: 'nenhuma', gif: 'afundo.gif' },
+    { exercise: 'Elevação de quadril', body_part: 'glúteo', sex: 'homem', level_1: 'básico', peso: 63, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_quadril.gif' },
+    { exercise: 'Glúteo no banco', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'gluteo_no_banco.gif' },
+    { exercise: 'Cadeira extensora', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'cadeira_extensora.gif' },
+    { exercise: 'Leg press', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'leg_press.gif' },
+    { exercise: 'Agachamento sumô', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_sumo.gif' },
+    { exercise: 'Elevação de pernas lateral', body_part: 'glúteo', sex: 'homem', level_1: 'básico', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_pernas_lateral.gif' },
+    { exercise: 'Hip thrust', body_part: 'glúteo', sex: 'homem', level_1: 'avançado', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'hip_thrust.gif' },
+    { exercise: 'Abdução de quadril', body_part: 'glúteo', sex: 'homem', level_1: 'básico', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'abducao_quadril.gif' },
+    { exercise: 'Stiff', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'stiff.gif' },
+    { exercise: 'Agachamento com halteres', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso: 5, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_halteres.gif' },
+    { exercise: 'Lunge', body_part: 'glúteo', sex: 'homem', level_1: 'avançado', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'lunge.gif' },
+    { exercise: 'Ponte de glúteos', body_part: 'glúteo', sex: 'homem', level_1: 'básico', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'ponte_gluteos.gif' },
+    { exercise: 'Cadeira abdutora', body_part: 'glúteo', sex: 'homem', level_1: 'intermediário', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'cadeira_abdutora.gif' },
+    { exercise: 'Agachamento com salto', body_part: 'glúteo', sex: 'homem', level_1: 'avançado', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_salto.gif' },
+    { exercise: 'Flexão de quadril com bola', body_part: 'glúteo', sex: 'homem', level_1: 'avançado', peso:65, altura: 1.75, doenca: 'nenhuma', gif: 'flexao_quadril_bola.gif' },
+    { exercise: 'Agachamento', body_part: 'glúteo', sex: 'mulher', level_1: 'básico', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_mulher.gif' },
+    { exercise: 'Afundo', body_part: 'glúteo', sex: 'mulher', level_1: 'básico', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'afundo_mulher.gif' },
+    { exercise: 'Elevação de quadril', body_part: 'glúteo', sex: 'mulher', level_1: 'básico', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_quadril_mulher.gif' },
+    { exercise: 'Cadeira extensora', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'cadeira_extensora_mulher.gif' },
+    { exercise: 'Glúteo no banco', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'gluteo_no_banco_mulher.gif' },
+    { exercise: 'Leg press', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'leg_press_mulher.gif' },
+    { exercise: 'Agachamento sumô', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_sumo_mulher.gif' },
+    { exercise: 'Elevação de pernas lateral', body_part: 'glúteo', sex: 'mulher', level_1: 'básico', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_pernas_lateral_mulher.gif' },
+    { exercise: 'Hip thrust', body_part: 'glúteo', sex: 'mulher', level_1: 'avançado', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'hip_thrust_mulher.gif' },
+    { exercise: 'Abdução de quadril', body_part: 'glúteo', sex: 'mulher', level_1: 'básico', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'abducao_quadril_mulher.gif' },
+    { exercise: 'Stiff', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'stiff_mulher.gif' },
+    { exercise: 'Agachamento com halteres', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso: 5, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_halteres_mulher.gif' },
+    { exercise: 'Lunge', body_part: 'glúteo', sex: 'mulher', level_1: 'avançado', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'lunge_mulher.gif' },
+    { exercise: 'Ponte de glúteos', body_part: 'glúteo', sex: 'mulher', level_1: 'básico', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'ponte_gluteos_mulher.gif' },
+    { exercise: 'Cadeira abdutora', body_part: 'glúteo', sex: 'mulher', level_1: 'intermediário', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'cadeira_abdutora_mulher.gif' },
+    { exercise: 'Agachamento com salto', body_part: 'glúteo', sex: 'mulher', level_1: 'avançado', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_salto_mulher.gif' },
+    { exercise: 'Flexão de quadril com bola', body_part: 'glúteo', sex: 'mulher', level_1: 'avançado', peso:65, altura: 1.65, doenca: 'nenhuma', gif: 'flexao_quadril_bola_mulher.gif' },
+
+
+    // Exercícios para homens - peito (26 exercícios)
+    { exercise: 'Supino reto', body_part: 'peito', sex: 'homem', level_1: 'básico', peso:80, altura: 1.75, doenca: 'nenhuma', gif: 'supino_reto.gif' },
+    { exercise: 'Supino inclinado', body_part: 'peito', sex: 'homem', level_1: 'básico', peso:80, altura: 1.75, doenca: 'nenhuma', gif: 'supino_inclinado.gif' },
+    { exercise: 'Flexão de braços', body_part: 'peito', sex: 'homem', level_1: 'básico', peso:80, altura: 1.75, doenca: 'nenhuma', gif: 'flexao_bracos.gif' },
+    { exercise: 'Supino com halteres', body_part: 'peito', sex: 'homem', level_1: 'intermediário', peso: 75, altura: 1.75, doenca: 'nenhuma', gif: 'supino_halteres.gif' },
+    { exercise: 'Crucifixo', body_part: 'peito', sex: 'homem', level_1: 'intermediário', peso: 67, altura: 1.75, doenca: 'nenhuma', gif: 'crucifixo.gif' },
+    { exercise: 'Peck deck', body_part: 'peito', sex: 'homem', level_1: 'intermediário', peso: 70, altura: 1.75, doenca: 'nenhuma', gif: 'peck_deck.gif' },
+    { exercise: 'Dips', body_part: 'peito', sex: 'homem', level_1: 'intermediário', peso:50 , altura: 1.75, doenca: 'nenhuma', gif: 'dips.gif' },
+    { exercise: 'Supino declinado', body_part: 'peito', sex: 'homem', level_1: 'intermediário', peso: 50, altura: 1.75, doenca: 'nenhuma', gif: 'supino_declinado.gif' },
+    { exercise: 'Flexão de braços com apoio', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 64, altura: 1.75, doenca: 'nenhuma', gif: 'flexao_bracos_apoio.gif' },
+    { exercise: 'Supino com barra', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'supino_barra.gif' },
+    { exercise: 'Crossover', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'crossover.gif' },
+    { exercise: 'Flexão de braços com elevação de pés', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'flexao_bracos_elevacao_pes.gif' },
+    { exercise: 'Supino com barra no peito', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'supino_barra_peito.gif' },
+    { exercise: 'Flexão de braços com peso', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'flexao_bracos_peso.gif' },
+    { exercise: 'Flexão de braços com um braço só', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 69, altura: 1.75, doenca: 'nenhuma', gif: 'flexao_bracos_um_braço.gif' },
+    { exercise: 'Pressão no banco', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'pressao_banco.gif' },
+    { exercise: 'Peito no halter', body_part: 'peito', sex: 'homem', level_1: 'avançado', peso: 86, altura: 1.75, doenca: 'nenhuma', gif: 'peito_halter.gif' },
+    { exercise: 'Supino reto', body_part: 'peito', sex: 'mulher', level_1: 'básico', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'supino_reto_mulher.gif' },
+    { exercise: 'Supino inclinado', body_part: 'peito', sex: 'mulher', level_1: 'básico', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'supino_inclinado_mulher.gif' },
+    { exercise: 'Flexão de braços', body_part: 'peito', sex: 'mulher', level_1: 'básico', peso: 86, altura: 1.65, doenca: 'nenhuma', gif: 'flexao_bracos_mulher.gif' },
+    { exercise: 'Supino com halteres', body_part: 'peito', sex: 'mulher', level_1: 'intermediário', peso: 55, altura: 1.65, doenca: 'nenhuma', gif: 'supino_halteres_mulher.gif' },
+    { exercise: 'Crucifixo', body_part: 'peito', sex: 'mulher', level_1: 'intermediário', peso: 75, altura: 1.65, doenca: 'nenhuma', gif: 'crucifixo_mulher.gif' },
+    { exercise: 'Peck deck', body_part: 'peito', sex: 'mulher', level_1: 'intermediário', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'peck_deck_mulher.gif' },
+    { exercise: 'Dips', body_part: 'peito', sex: 'mulher', level_1: 'intermediário', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'dips_mulher.gif' },
+    { exercise: 'Supino declinado', body_part: 'peito', sex: 'mulher', level_1: 'intermediário', peso: 65, altura: 1.65, doenca: 'nenhuma', gif: 'supino_declinado_mulher.gif' },
+    { exercise: 'Flexão de braços com apoio', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'flexao_bracos_apoio_mulher.gif' },
+    { exercise: 'Supino com barra', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 46, altura: 1.65, doenca: 'nenhuma', gif: 'supino_barra_mulher.gif' },
+    { exercise: 'Crossover', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'crossover_mulher.gif' },
+    { exercise: 'Flexão de braços com elevação de pés', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 6, altura: 1.65, doenca: 'nenhuma', gif: 'flexao_bracos_elevacao_pes_mulher.gif' },
+    { exercise: 'Supino com barra no peito', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'supino_barra_peito_mulher.gif' },
+    { exercise: 'Flexão de braços com peso', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 65, altura: 1.65, doenca: 'nenhuma', gif: 'flexao_bracos_peso_mulher.gif' },
+    { exercise: 'Flexão de braços com um braço só', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'flexao_bracos_um_braço_mulher.gif' },
+    { exercise: 'Pressão no banco', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'pressao_banco_mulher.gif' },
+    { exercise: 'Peito no halter', body_part: 'peito', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'peito_halter_mulher.gif' },
+
+
+    //Exercicio de perna
+    { exercise: 'Agachamento', body_part: 'perna', sex: 'homem', level_1: 'básico', peso: 78, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento.gif' },
+    { exercise: 'Leg press', body_part: 'perna', sex: 'homem', level_1: 'básico', peso: 87, altura: 1.75, doenca: 'nenhuma', gif: 'leg_press.gif' },
+    { exercise: 'Cadeira extensora', body_part: 'perna', sex: 'homem', level_1: 'básico', peso: 78, altura: 1.75, doenca: 'nenhuma', gif: 'cadeira_extensora.gif' },
+    { exercise: 'Cadeira flexora', body_part: 'perna', sex: 'homem', level_1: 'básico', peso: 69, altura: 1.75, doenca: 'nenhuma', gif: 'cadeira_flexora.gif' },
+    { exercise: 'Afundo', body_part: 'perna', sex: 'homem', level_1: 'intermediário', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'afundo.gif' },
+    { exercise: 'Agachamento sumô', body_part: 'perna', sex: 'homem', level_1: 'intermediário', peso: 75, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_sumo.gif' },
+    { exercise: 'Agachamento frontal', body_part: 'perna', sex: 'homem', level_1: 'intermediário', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_frontal.gif' },
+    { exercise: 'Stiff', body_part: 'perna', sex: 'homem', level_1: 'intermediário', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'stiff.gif' },
+    { exercise: 'Agachamento búlgaro', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_bulgaro.gif' },
+    { exercise: 'Leg press unilateral', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 86, altura: 1.75, doenca: 'nenhuma', gif: 'leg_press_unilateral.gif' },
+    { exercise: 'Cadeira extensora unilateral', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 96, altura: 1.75, doenca: 'nenhuma', gif: 'cadeira_extensora_unilateral.gif' },
+    { exercise: 'Agachamento com salto', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'agachamento_salto.gif' },
+    { exercise: 'Extensão de quadril', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'extensao_quadril.gif' },
+    { exercise: 'Ponte', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'ponte.gif' },
+    { exercise: 'Step', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 65, altura: 1.75, doenca: 'nenhuma', gif: 'step.gif' },
+    { exercise: 'Pistol squat', body_part: 'perna', sex: 'homem', level_1: 'avançado', peso: 56, altura: 1.75, doenca: 'nenhuma', gif: 'pistol_squat.gif' },
+    { exercise: 'Agachamento', body_part: 'perna', sex: 'mulher', level_1: 'básico', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_mulher.gif' },
+    { exercise: 'Leg press', body_part: 'perna', sex: 'mulher', level_1: 'básico', peso: 86, altura: 1.65, doenca: 'nenhuma', gif: 'leg_press_mulher.gif' },
+    { exercise: 'Cadeira extensora', body_part: 'perna', sex: 'mulher', level_1: 'básico', peso: 86, altura: 1.65, doenca: 'nenhuma', gif: 'cadeira_extensora_mulher.gif' },
+    { exercise: 'Cadeira flexora', body_part: 'perna', sex: 'mulher', level_1: 'básico', peso: 86, altura: 1.65, doenca: 'nenhuma', gif: 'cadeira_flexora_mulher.gif' },
+    { exercise: 'Afundo', body_part: 'perna', sex: 'mulher', level_1: 'intermediário', peso: 75, altura: 1.65, doenca: 'nenhuma', gif: 'afundo_mulher.gif' },
+    { exercise: 'Agachamento sumô', body_part: 'perna', sex: 'mulher', level_1: 'intermediário', peso: 75, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_sumo_mulher.gif' },
+    { exercise: 'Agachamento frontal', body_part: 'perna', sex: 'mulher', level_1: 'intermediário', peso: 16, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_frontal_mulher.gif' },
+    { exercise: 'Stiff', body_part: 'perna', sex: 'mulher', level_1: 'intermediário', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'stiff_mulher.gif' },
+    { exercise: 'Agachamento búlgaro', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_bulgaro_mulher.gif' },
+    { exercise: 'Leg press unilateral', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'leg_press_unilateral_mulher.gif' },
+    { exercise: 'Cadeira extensora unilateral', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'cadeira_extensora_unilateral_mulher.gif' },
+    { exercise: 'Agachamento com salto', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'agachamento_salto_mulher.gif' },
+    { exercise: 'Extensão de quadril', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'extensao_quadril_mulher.gif' },
+    { exercise: 'Ponte', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'ponte_mulher.gif' },
+    { exercise: 'Step', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 55, altura: 1.65, doenca: 'nenhuma', gif: 'step_mulher.gif' },
+    { exercise: 'Pistol squat', body_part: 'perna', sex: 'mulher', level_1: 'avançado', peso: 65, altura: 1.65, doenca: 'nenhuma', gif: 'pistol_squat_mulher.gif' },
+
+     // Exercícios para homens - ombros (26 exercícios)
+    { exercise: 'Desenvolvimento de ombros com barra', body_part: 'ombros', sex: 'homem', level_1: 'básico', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'desenvolvimento_ombros_barra.gif' },
+    { exercise: 'Desenvolvimento de ombros com halteres', body_part: 'ombros', sex: 'homem', level_1: 'básico', peso: 75, altura: 1.75, doenca: 'nenhuma', gif: 'desenvolvimento_ombros_halteres.gif' },
+    { exercise: 'Elevação lateral', body_part: 'ombros', sex: 'homem', level_1: 'básico', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_lateral.gif' },
+    { exercise: 'Elevação frontal', body_part: 'ombros', sex: 'homem', level_1: 'básico', peso: 78, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_frontal.gif' },
+    { exercise: 'Desenvolvimento Arnold', body_part: 'ombros', sex: 'homem', level_1: 'intermediário', peso: 65, altura: 1.75, doenca: 'nenhuma', gif: 'desenvolvimento_arnold.gif' },
+    { exercise: 'Crucifixo invertido', body_part: 'ombros', sex: 'homem', level_1: 'intermediário', peso: 65, altura: 1.75, doenca: 'nenhuma', gif: 'crucifixo_invertido.gif' },
+    { exercise: 'Elevação lateral em pé', body_part: 'ombros', sex: 'homem', level_1: 'intermediário', peso: 62, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_lateral_pe.gif' },
+    { exercise: 'Remada alta', body_part: 'ombros', sex: 'homem', level_1: 'intermediário', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'remada_alta.gif' },
+    { exercise: 'Desenvolvimento de ombros com barra na frente', body_part: 'ombros', sex: 'homem', level_1: 'avançado', peso: 66, altura: 1.75, doenca: 'nenhuma', gif: 'desenvolvimento_frontal.gif' },
+    { exercise: 'Elevação lateral com cabo', body_part: 'ombros', sex: 'homem', level_1: 'avançado', peso: 55, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_lateral_cabo.gif' },
+    { exercise: 'Press militar', body_part: 'ombros', sex: 'homem', level_1: 'avançado', peso: 65, altura: 1.75, doenca: 'nenhuma', gif: 'press_militar.gif' },
+    { exercise: 'Elevação de ombros', body_part: 'ombros', sex: 'homem', level_1: 'avançado', peso: 76, altura: 1.75, doenca: 'nenhuma', gif: 'elevacao_ombros.gif' },
+    { exercise: 'Desenvolvimento de ombros com barra', body_part: 'ombros', sex: 'mulher', level_1: 'básico', peso: 76, altura: 1.65, doenca: 'nenhuma', gif: 'desenvolvimento_ombros_barra_mulher.gif' },
+    { exercise: 'Desenvolvimento de ombros com halteres', body_part: 'ombros', sex: 'mulher', level_1: 'básico', peso: 78, altura: 1.65, doenca: 'nenhuma', gif: 'desenvolvimento_ombros_halteres_mulher.gif' },
+    { exercise: 'Elevação lateral', body_part: 'ombros', sex: 'mulher', level_1: 'básico', peso: 56, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_lateral_mulher.gif' },
+    { exercise: 'Elevação frontal', body_part: 'ombros', sex: 'mulher', level_1: 'básico', peso: 64, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_frontal_mulher.gif' },
+    { exercise: 'Desenvolvimento Arnold', body_part: 'ombros', sex: 'mulher', level_1: 'intermediário', peso: 65, altura: 1.65, doenca: 'nenhuma', gif: 'desenvolvimento_arnold_mulher.gif' },
+    { exercise: 'Crucifixo invertido', body_part: 'ombros', sex: 'mulher', level_1: 'intermediário', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'crucifixo_invertido_mulher.gif' },
+    { exercise: 'Elevação lateral em pé', body_part: 'ombros', sex: 'mulher', level_1: 'intermediário', peso: 68, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_lateral_pe_mulher.gif' },
+    { exercise: 'Remada alta', body_part: 'ombros', sex: 'mulher', level_1: 'intermediário', peso: 62, altura: 1.65, doenca: 'nenhuma', gif: 'remada_alta_mulher.gif' },
+    { exercise: 'Desenvolvimento de ombros com barra na frente', body_part: 'ombros', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'desenvolvimento_frontal_mulher.gif' },
+    { exercise: 'Elevação lateral com cabo', body_part: 'ombros', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_lateral_cabo_mulher.gif' },
+    { exercise: 'Press militar', body_part: 'ombros', sex: 'mulher', level_1: 'avançado', peso: 65, altura: 1.65, doenca: 'nenhuma', gif: 'press_militar_mulher.gif' },
+    { exercise: 'Elevação de ombros', body_part: 'ombros', sex: 'mulher', level_1: 'avançado', peso: 66, altura: 1.65, doenca: 'nenhuma', gif: 'elevacao_ombros_mulher.gif' },
+
+];
+
+        // Função para buscar a imagem de um exercício (adicionando '+ gif' na consulta)
+        async function buscarImagem(consulta) {
+            const apiKey = 'AIzaSyB-Nq_Si4f3Qvi4wJPmbgErE0EXEZwDCDw';
+            const searchEngineId = '03e0377e9fccf4d57';
+            const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(consulta)}+gif&key=${apiKey}&cx=${searchEngineId}&searchType=image&num=1`;
+            const response = await fetch(url);
+            const data = await response.json();
+            if (data.items && data.items.length > 0) {
+                return data.items[0].link;
+            } else {
+                return null;
+            }
+        }
+
+        // Função que gera o plano de treino filtrado
+        async function gerarPlanoTreino(sexo, nivel, doenca, altura, peso) {
+            altura = parseFloat(altura);
+            peso = parseFloat(peso);
+
+            const alturaMin = altura - 6.36;
+            const alturaMax = altura + 6.36;
+            const pesoMin = peso - 36;
+            const pesoMax = peso + 36;
+
+            // Filtro com base nas entradas do usuário
+            const filteredData = data.filter(ex =>
+                ex.sex.toLowerCase() === sexo &&
+                ex.level_1.toLowerCase() === nivel &&
+                ex.doenca.toLowerCase().includes(doenca) &&
+                ex.altura >= alturaMin && ex.altura <= alturaMax &&
+                ex.peso >= pesoMin && ex.peso <= pesoMax
+            );
+
+            // Organiza o plano por parte do corpo
+            const plano = {};
+            for (const part of ['braço', 'costa', 'abdômen', 'perna', 'peito', 'ombros', 'glúteo']) {
+                const exercises = await Promise.all(
+                    filteredData
+                        .filter(ex => ex.body_part === part)
+                        .map(async ex => {
+                            const gifUrl = await buscarImagem(ex.exercise);
+                            return {
+                                exercise: ex.exercise,
+                                body_part: ex.body_part,
+                                gif: gifUrl || 'Imagem não encontrada'
+                            };
+                        })
+                );
+                plano[part] = exercises.slice(0, 6); // Limita a 6 exercícios por grupo
+            }
+
+            return plano;
+        }
+
+        // Função acionada ao clicar em "Próximo"
+        async function onGenerateClick() {
+            const sexo = document.getElementById('sexo').value.trim().toLowerCase();
+            const nivel = document.getElementById('nivel').value.trim().toLowerCase();
+            const doenca = document.getElementById('doenca').value.trim().toLowerCase();
+            const altura = document.getElementById('altura').value;
+            const peso = document.getElementById('peso').value;
+
+            // Gera o plano de treino com base nas entradas
+            const plano = await gerarPlanoTreino(sexo, nivel, doenca, altura, peso);
+
+            // Salva o plano no localStorage
+            localStorage.setItem('planoTreino', JSON.stringify(plano));
+
+            // Redireciona para a página de treinos
+            window.location.href = 'page-nutri.html'; // Esta página deve ser a aba de GIFs que você deseja exibir
+        }
+    </script>
+</body>
+</html>
+
+

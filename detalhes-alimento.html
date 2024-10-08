@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Alimento</title>
+    <link rel="shortcut icon" href="favicon_io (6)/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #03B403;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+            position: relative; /* Define o contexto para posicionamento absoluto */
+            overflow-x: hidden;
+        }
+
+        #alimento-img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-left: 38px;
+        }
+
+        /* Flex container para alinhar o nome do alimento no centro */
+        .header-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: white;
+            font-size: 40px;
+            margin: 0 20px; /* Espaçamento entre o botão e o nome */
+            margin-bottom: 30px;
+        }
+
+        /* Estilo para o botão voltar no canto superior esquerdo */
+        .voltar-bnt-b {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        /* Estilo para o botão de voltar na parte inferior */
+        .btn-voltar {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .btn-voltar:hover {
+            background-color: #218838;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+
+
+
+
+
+        /* cardapio */
+        .book {
+  position: relative;
+  border-radius: 10px;
+  width: 330px;
+  height: 400px;
+  background-color: #05e92b;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: #05e92b;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+p {
+  font-size: 50px;
+  font-weight:bold;
+  color:white;
+
+  
+}
+
+.logo{
+    width: 250px;
+    height: 200px;
+}
+
+    </style>
+
+    <!-- Ícone de voltar no canto superior esquerdo -->
+    <a href="nutri-page.html">
+        <img src="voltar.png" alt="Voltar" class="voltar-bnt-b">
+    </a>
+
+    <!-- Nome do alimento centralizado -->
+     <h1>Sua dieta</h1>
+
+
+    <div class="book">
+    <from>
+        <img id="alimento-img" src="#" alt="Imagem do alimento">
+        <div class="header-flex">
+            <h1 id="alimento-nome"></h1>
+        </div>
+     
+    </from>
+        <div class="cover">
+        <from>
+            <img src="nova_logo.png" alt="logo" class="logo">
+            <p>Cardápio</p>
+        </from>
+        </div>
+       </div>
+    <!-- Imagem do alimento -->
+    
+
+    <!-- Botão de voltar na parte inferior -->
+    <!-- <a href="nutri-page.html#container-page" class="btn-voltar">Voltar</a> -->
+
+    <script>
+        // Função para capturar os parâmetros da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Exibir os dados do alimento
+        const alimentoNome = getQueryParam('alimento');
+        const alimentoGif = getQueryParam('gif');
+
+        document.getElementById('alimento-nome').textContent = alimentoNome || 'Alimento';
+        if (alimentoGif) {
+            document.getElementById('alimento-img').src = alimentoGif;
+            document.getElementById('alimento-img').alt = `Imagem de ${alimentoNome}`;
+        } else {
+            document.getElementById('alimento-img').src = 'placeholder.png';
+            document.getElementById('alimento-img').alt = 'Imagem não disponível';
+        }
+    </script>
+</body>
+</html>

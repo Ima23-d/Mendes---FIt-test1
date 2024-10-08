@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador de Corrida</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #03B403;
+        position: relative;
+        flex-direction: column;
+        overflow-x:hidden;
+    }
+
+    .container {
+        text-align: center;
+        background-color: #01e425;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        position: relative;
+        margin-top: 20px;
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .info p {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    button {
+        background: black;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    button:hover {
+        background-color: rgb(3, 212, 3);
+    }
+
+    button:disabled {
+        background-color: rgb(3, 212, 3);
+        cursor: not-allowed;
+    }
+
+    h1 {
+        color: white;
+        font-weight: bold;
+        font-size: 36px;
+    }
+
+    p {
+        font-weight: bold;
+        color: black;
+        font-size: 24px;
+    }
+
+    .card {
+        width: 150%;
+        height: 90px;
+        background: #353535;
+        transform-style: preserve-3d;
+        transform: perspective(30rem) rotateX(30deg);
+        position: relative;
+        margin: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        z-index: 2;
+        max-width: 550px;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(50%);
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(
+            90deg,
+            #fff 0%,
+            #fff 70%,
+            #353535 70%,
+            #353535 100%
+        );
+        background-size: 120px;
+        animation: animateRoad 0.5s linear infinite;
+    }
+
+    @keyframes animateRoad {
+        0% {
+            background-position: 0px;
+        }
+        100% {
+            background-position: -120px;
+        }
+    }
+
+    .card::after {
+        content: "";
+        width: 100%;
+        height: 20px;
+        position: absolute;
+        bottom: -20px;
+        background-color: #272727;
+        transform-origin: top;
+        transform: perspective(30rem) rotateX(-30deg);
+        box-shadow: 0 10px 20px -2px #272727;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .shadow {
+        color: #fff;
+        padding: 10px;
+        letter-spacing: 1px;
+    }
+    img {
+        margin-bottom: -50px;
+        width:150px;
+        height: 150px;
+    }
+
+    .voltar{
+        width: 45px;
+        height: 45px;
+        margin-right: 350px;
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+<body>
+
+    <a href="muscle-page.html">
+        <img src="voltar.png" alt="img" class="voltar">
+      </a>
+
+    <img src="corre-unscreen.gif" alt="">
+    <div class="card"></div>
+    <div class="container">
+        <h1>Rastreador de Corrida</h1>
+        <div class="info">
+            <p id="distance">Distância: 0 km</p>
+            <p id="time">Tempo: 0 h 0 m 0 s</p>
+            <p id="calories">Calorias: 0</p>
+        </div>
+        <button id="startButton">Iniciar</button>
+        <button id="stopButton" disabled>Parar</button>
+        <button id="resetButton">Zerar</button>
+        <button id="reportButton">Ver Relatório</button>
+    </div>
+
+    <script>
+        let startTime, watchId;
+        let distanceTraveled = 0;
+        const caloriesPerKm = 50;  
+        let lastLat = null, lastLon = null;
+        let elapsedTime = 0;
+        let timeInterval;
+        let isTracking = false;
+
+        document.getElementById('startButton').addEventListener('click', startTracking);
+        document.getElementById('stopButton').addEventListener('click', stopTracking);
+        document.getElementById('resetButton').addEventListener('click', resetTracking);
+        document.getElementById('reportButton').addEventListener('click', function() {
+            localStorage.setItem('distance', distanceTraveled.toFixed(2));
+            localStorage.setItem('elapsedTime', elapsedTime.toFixed(2));
+            localStorage.setItem('calories', (distanceTraveled * caloriesPerKm).toFixed(2));
+            window.location.href = 'relatorio.html';  
+        });
+
+        function startTracking() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    lastLat = position.coords.latitude;
+                    lastLon = position.coords.longitude;
+                    startTime = new Date().getTime() - elapsedTime * 1000; 
+                    watchId = navigator.geolocation.watchPosition(updateLocation, showError, { enableHighAccuracy: true });
+                    if (!isTracking) {
+                        timeInterval = setInterval(updateTime, 1000);  
+                        isTracking = true;
+                    }
+                    document.getElementById('startButton').disabled = true;
+                    document.getElementById('stopButton').disabled = false;
+                }, showError);
+            } else {
+                alert('Geolocalização não é suportada pelo seu navegador.');
+            }
+        }
+
+        function stopTracking() {
+            if (watchId) {
+                navigator.geolocation.clearWatch(watchId);
+                watchId = null;
+                clearInterval(timeInterval);
+                isTracking = false;
+                document.getElementById('startButton').disabled = false;
+                document.getElementById('stopButton').disabled = true;
+            }
+        }
+
+        function resetTracking() {
+            stopTracking();
+            distanceTraveled = 0;
+            elapsedTime = 0;
+            document.getElementById('distance').textContent = `Distância: 0 km`;
+            document.getElementById('time').textContent = `Tempo: 0 h 0 m 0 s`;
+            document.getElementById('calories').textContent = `Calorias: 0`;
+            document.getElementById('startButton').disabled = false;
+            document.getElementById('stopButton').disabled = true;
+            lastLat = null;
+            lastLon = null;
+        }
+
+        function updateTime() {
+            elapsedTime = (new Date().getTime() - startTime) / 1000;
+            const hours = Math.floor(elapsedTime / 3600);
+            const minutes = Math.floor((elapsedTime % 3600) / 60);
+            const seconds = Math.floor(elapsedTime % 60);
+            document.getElementById('time').textContent = `Tempo: ${hours} h ${minutes} m ${seconds} s`;
+        }
+
+        function updateLocation(position) {
+            const currentLat = position.coords.latitude;
+            const currentLon = position.coords.longitude;
+
+            if (lastLat !== null && lastLon !== null) {
+                const distance = calculateDistance(lastLat, lastLon, currentLat, currentLon);
+                distanceTraveled += distance;
+                lastLat = currentLat;
+                lastLon = currentLon;
+
+                const caloriesBurned = distanceTraveled * caloriesPerKm;
+
+                document.getElementById('distance').textContent = `Distância: ${distanceTraveled.toFixed(2)} km`;
+                document.getElementById('calories').textContent = `Calorias: ${caloriesBurned.toFixed(2)}`;
+            } else {
+                lastLat = currentLat;
+                lastLon = currentLon;
+            }
+        }
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; 
+            const dLat = toRad(lat2 - lat1);
+            const dLon = toRad(lon2 - lon1);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c; 
+        }
+
+        function toRad(value) {
+            return value * Math.PI / 180;
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Usuário negou a solicitação de Geolocalização.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Localização indisponível.");
+                    break;
+                case error.TIMEOUT:
+                    alert("A solicitação de localização expirou.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Erro desconhecido.");
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
